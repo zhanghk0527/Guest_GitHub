@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from sign.models import Event,Guest
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
+
 # Create your views here.
 def index(request):
     # return HttpResponse("Hello Django!")
@@ -30,7 +31,7 @@ def login_action(request):
             return render(request,'index.html',{'error':'username or password error!'})
 
 # 发布会管理
-@login_required # 添加装饰，以类的方式运行
+@login_required # 添加修饰
 def event_manage(request):
     # 读取浏览器cookie
     # username = request.COOKIES.get('user','')
