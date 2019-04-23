@@ -117,3 +117,52 @@
                         │                                                      │
                         └──────────────────────────────────────────────────────┘
 
+看一下Python接口实现的方式：
+    Python中没有提供interface的创建和使用，但是可以借助第三方库Zope.interface来实现。
+
+                        ┌──────────────────────────────────────────────────────┐
+                        │                                                      │
+                        │ # Python - Demo                                      │
+                        │ class Host(object):                                  │
+                        │                                                      │
+                        │       def goodmorning(self, name):                   │
+                        │                                                      │
+                        │        """ Say good morning to guests """            │
+                        │           return "Good morning, %s!" % name          │
+                        │                                                      │
+                        │ if __name__ == '__main__':                           │
+                        │    h = Host()                                        │
+                        │    h1 = h.goodmorning('zhangsan')                    │
+                        │    print (h1)                                        │
+                        │                                                      │
+                        └──────────────────────────────────────────────────────┘
+
+    上面demo使用Zope.interface后：
+
+                        ┌────────────────────────────────────────────────────────┐
+                        │                                                        │
+                        │ # Python - Zope.interface - Demo                       │
+                        │ from zope.interface import Interface                   │
+                        │ from zope.interface.declarations import implementer    │
+                        │                                                        │
+                        │ # 定义接口                                              │
+                        │ class Host(object):                                    │
+                        │                                                        │
+                        │       def goodmorning(self, name):                     │
+                        │                                                        │
+                        │        """ Say good morning to guests """              │
+                        │                                                        │
+                        │ @implementer  # 继承接口                                │
+                        │ class Host:                                            │
+                        │                                                        │
+                        │    def goodmorning(self, guest)                        │
+                        │                                                        │
+                        │    """ Say good morning to guests """                  │
+                        │    return "Good morning, %s!" % guest                  │
+                        │                                                        │
+                        │ if __name__ == '__main__':                             │
+                        │    P = Host()                                          │
+                        │    h1 = P.goodmorning('Alen')                          │
+                        │    print (h1)                                          │
+                        │                                                        │
+                        └────────────────────────────────────────────────────────┘
