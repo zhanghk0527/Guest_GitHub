@@ -272,8 +272,7 @@ HTTP请求方法有哪些？
                     Host：初始URL中的主机和端口，它通常是从HTTP URL中提取出来的；
 
                     User-Agent：请求报文头域允许客户端将它的操作系统、浏览器和其他属性告诉服务器。
-                    
-             https://github.com/zhanghk0527/Image_GitHub/blob/master/Request_Headers.png
+
 
     b. 响应头信息(Response_Headers)：
 
