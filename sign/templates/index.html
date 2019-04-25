@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Django Page</title>
+
 </head>
-<body style="background-image : url(Home.jpg);background-repeat : repeat-x;">
+<body>
 
     <!-- 使用Post请求方式进行登录 -->
     <h1>发布会管理</h1>
@@ -14,6 +15,8 @@
         {{error}}<br>
         <button id="btn" type="submit">登录</button>
         {% csrf_token %}
+        <div id="bg">
+        </div>
     </form>
 
     <!-- 使用Get请求方式进行登录 -->
