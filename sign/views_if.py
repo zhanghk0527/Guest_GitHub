@@ -58,7 +58,7 @@ def get_event_list(request):
             result = Event.objects.get(id = eid)
 
         except ObjectDoesNotExist:
-            return  JsonResponse({'status':10022, 'message':'query resuly is empty'})
+            return  JsonResponse({'status':10022, 'message':'query result is empty'})
 
         else:
             event['name'] = result.name
