@@ -85,7 +85,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'newpassword',
         'OPTINS': {
-            'init_command': "set sql_name='STRICT_TRANS_TABLES'",
+            'init_command': "SET sql_name='STRICT_TRANS_TABLES'",
         },
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
