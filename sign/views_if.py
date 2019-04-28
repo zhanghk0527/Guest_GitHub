@@ -46,8 +46,8 @@ def add_event(request):
 
 # 添加查询发布会接口
 def get_event_list(request):
-    eid = request.Get.get("eid","")
-    name = request.Get.get("name","")
+    eid = request.GET.get("eid","")
+    name = request.GET.get("name","")
 
     if eid == '' and name == '':
         return JsonResponse({'status':10021, 'message':'parameter error'})
@@ -137,8 +137,8 @@ def add_guest(request):
 
 # 嘉宾查询接口
 def get_guest_list(request):
-    eid = request.Get.get("eid","")
-    phone = request.Get.get("phone","")
+    eid = request.GET.get("eid","")
+    phone = request.GET.get("phone","")
 
     if eid == '':
         return JsonResponse({'status':10021, 'message':'eid cannot be empty'})
