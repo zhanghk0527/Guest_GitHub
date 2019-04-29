@@ -39,7 +39,7 @@ def add_event(request):
 
     except ValidationError as e:
         error = 'start_time format error. It must be in YYYY-MM-DD HH:MM:SS format.'
-        return JsonResponse({'status':10024, 'messge':error})
+        return JsonResponse({'status':10024, 'message':error})
 
     return JsonResponse({'status':200, 'message':'add event success'})
 
